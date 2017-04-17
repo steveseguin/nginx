@@ -24,12 +24,10 @@ make -j2
 sudo make install
 export PATH=/usr/local/openresty/bin:/usr/local/openresty/nginx/sbin:$PATH
 
-## download the following script and name it as nginx-init.sh
-## https://github.com/vigetlabs/watch-dog/blob/master/config/stack/files/nginx-init.sh
-
-## Move the script to the init.d directory & make executable
+## Move the service deploy script to the init.d directory & make executable
 cd ~
-sudo mv nginx-init.sh /etc/init.d/nginx
+git clone https://github.com/steveseguin/nginx.git
+sudo mv ~/nginx/nginx-init.sh /etc/init.d/nginx
 sudo chmod +x /etc/init.d/nginx
 
 ## Add nginx to the system startup
