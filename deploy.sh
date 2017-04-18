@@ -26,13 +26,13 @@ export PATH=/usr/local/openresty/sbin:/usr/local/openresty/nginx/sbin:$PATH
 
 ## Let's configure it for RTMP ingest using Steve Seguin's example configuration.
 cd /usr/local/openresty/nginx/conf
-sudo mv nginx.conf nginx.conf.bak
-sudo mv ~/nginx/nginx.conf ./nginx.conf
+sudo cp nginx.conf nginx.conf.bak
+sudo cp ~/nginx/nginx.conf ./nginx.conf
 ### You can view server stats with the following additional @ http://thisserver.com/stat
-sudo mv ~/nginx/stat.xsl ../stat.xsl
-sudo mv ~/nginx/nginx.service /lib/systemd/system
-systemctl enable nginx.service
-systemctl start nginx.service
+sudo cp ~/nginx/stat.xsl ../stat.xsl
+sudo cp ~/nginx/nginx.service /lib/systemd/system
+sudo systemctl enable nginx.service
+sudo systemctl start nginx.service
 
 ## Time to install SSL (optional)
 ### Below is how you can install a FREE SSL cert, which lasts 90 days. It requires a domain name.
