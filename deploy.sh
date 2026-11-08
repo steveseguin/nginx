@@ -19,7 +19,7 @@ gpg openresty-1.11.2.2.tar.gz.asc
 tar -xvf openresty-1.11.2.2.tar.gz
 cd openresty-1.11.2.2
 sudo apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl curl -y
-./configure -j2 --with-pcre-jit --with-ipv6  --add-module=/home/ubuntu/build/nginx-rtmp-module --with-http_ssl_module --without-http_rewrite_module --with-openssl=/home/ubuntu/build/openssl-1.0.2g  --without-http_gzip_module
+./configure -j2 --with-pcre-jit --with-ipv6  --add-module="$HOME/build/nginx-rtmp-module" --with-http_ssl_module --without-http_rewrite_module --with-openssl="$HOME/build/openssl-1.0.2g"  --without-http_gzip_module
 make -j2
 sudo make install
 export PATH=/usr/local/openresty/sbin:/usr/local/openresty/nginx/sbin:$PATH
